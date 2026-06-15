@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Care Awareness Programmes and Their Impact</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f8f7;
+    color: #222;
+    line-height: 1.6;
+  }
+
+  header {
+    background-color: #2e7d6f;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  nav {
+    background-color: #1f5b50;
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+
+  section {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    color: #2e7d6f;
+    border-bottom: 2px solid #2e7d6f;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+
+  /* About section */
+  .about p {
+    text-align: justify;
+  }
+
+  /* Programmes section */
+  .programme-list {
+    list-style: none;
+  }
+
+  .programme-list li {
+    background-color: #fff;
+    border-left: 5px solid #2e7d6f;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+
+  .programme-list li strong {
+    color: #1f5b50;
+  }
+
+  /* Impact section table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+  }
+
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #2e7d6f;
+    color: #fff;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f0f5f4;
+  }
+
+  /* Signup form */
+  .signup-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    max-width: 450px;
+    margin: 0 auto;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  }
+
+  .signup-form label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .signup-form input,
+  .signup-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .signup-form button {
+    margin-top: 18px;
+    width: 100%;
+    padding: 10px;
+    background-color: #2e7d6f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .signup-form button:hover {
+    background-color: #1f5b50;
+  }
+
+  #successMsg {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #1f5b50;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Health Care Awareness Programmes</h1>
+  <p>A Mini Project on Awareness Initiatives and Their Impact on the Community</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#programmes">Programmes</a>
+  <a href="#impact">Impact</a>
+  <a href="#signup">Sign Up</a>
+</nav>
+
+<div class="container">
+
+  <section id="about" class="about">
+    <h2>About This Project</h2>
+    <p>
+      Health care awareness programmes play an important role in educating people about
+      diseases, hygiene, nutrition, and the importance of regular health check-ups.
+      This mini project highlights some common health awareness programmes, shows
+      their impact through simple statistics, and allows visitors to sign up to
+      participate in upcoming awareness camps.
+    </p>
+  </section>
+
+  <section id="programmes">
+    <h2>Awareness Programmes</h2>
+    <ul class="programme-list">
+      <li><strong>Immunisation Awareness:</strong> Educates parents about vaccination schedules for children to prevent diseases like polio, measles, and hepatitis.</li>
+      <li><strong>Hygiene and Sanitation:</strong> Promotes handwashing, clean drinking water, and proper waste disposal to reduce infections.</li>
+      <li><strong>Maternal and Child Health:</strong> Spreads awareness about prenatal care, safe delivery, and infant nutrition.</li>
+      <li><strong>Nutrition Awareness:</strong> Encourages balanced diets and addresses problems like anaemia and malnutrition.</li>
+      <li><strong>Non-Communicable Disease Screening:</strong> Conducts free check-ups for blood pressure, diabetes, and other lifestyle diseases.</li>
+      <li><strong>Mental Health Awareness:</strong> Reduces stigma around mental health and shares information about counselling services.</li>
+    </ul>
+  </section>
+
+  <section id="impact">
+    <h2>Impact of Awareness Programmes</h2>
+    <table>
+      <tr>
+        <th>Health Indicator</th>
+        <th>Before Programme</th>
+        <th>After Programme</th>
+      </tr>
+      <tr>
+        <td>Children fully immunised</td>
+        <td>42%</td>
+        <td>76%</td>
+      </tr>
+      <tr>
+        <td>Households practising handwashing</td>
+        <td>38%</td>
+        <td>61%</td>
+      </tr>
+      <tr>
+        <td>Pregnant women with regular check-ups</td>
+        <td>29%</td>
+        <td>48%</td>
+      </tr>
+      <tr>
+        <td>People aware of nearby health helpline</td>
+        <td>21%</td>
+        <td>67%</td>
+      </tr>
+    </table>
+    <p style="margin-top:10px;">
+      The data above shows that awareness programmes lead to a noticeable improvement
+      in health-related knowledge and practices within just a few months.
+    </p>
+  </section>
+
+  <section id="signup">
+    <h2>Sign Up for Awareness Programme</h2>
+    <div class="signup-form">
+      <form id="signupForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+        <label for="programme">Select Programme</label>
+        <select id="programme" name="programme">
+          <option>Immunisation Awareness</option>
+          <option>Hygiene and Sanitation</option>
+          <option>Maternal and Child Health</option>
+          <option>Nutrition Awareness</option>
+          <option>NCD Screening</option>
+          <option>Mental Health Awareness</option>
+        </select>
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <div id="successMsg"></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>Mini Project - Health Care Awareness Programmes and Their Impact</p>
+</footer>
+
+<script>
+  document.getElementById("signupForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var programme = document.getElementById("programme").value;
+
+    var msg = document.getElementById("successMsg");
+    msg.style.display = "block";
+    msg.textContent = "Thank you, " + name + "! You have successfully signed up for " + programme + ".";
+
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
