@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Healthcare Awareness Programmes and Their Impact</title>
+<title>Healthcare Awareness Programmes</title>
 
 <style>
 *{
@@ -11,7 +11,6 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Segoe UI',sans-serif;
-scroll-behavior:smooth;
 }
 
 body{
@@ -19,6 +18,7 @@ background:#f4fbff;
 color:#333;
 }
 
+/* HEADER */
 header{
 background:linear-gradient(135deg,#00c6ff,#0072ff);
 color:white;
@@ -26,26 +26,20 @@ text-align:center;
 padding:60px 20px;
 }
 
-header h1{
-font-size:3rem;
-}
+header h1{font-size:2.8rem;}
 
-header p{
-margin-top:10px;
-font-size:18px;
-}
-
+/* NAV */
 nav{
+background:#0057c2;
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-background:#0057c2;
 }
 
 nav a{
 color:white;
-text-decoration:none;
 padding:15px 20px;
+text-decoration:none;
 transition:0.3s;
 }
 
@@ -53,17 +47,19 @@ nav a:hover{
 background:#00c6ff;
 }
 
+/* SECTION */
 section{
 padding:60px 10%;
 }
 
 .section-title{
 text-align:center;
-font-size:2.2rem;
-margin-bottom:30px;
+font-size:2rem;
 color:#0072ff;
+margin-bottom:25px;
 }
 
+/* CARDS */
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -72,10 +68,10 @@ gap:20px;
 
 .card{
 background:white;
-padding:25px;
+padding:20px;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-transition:.3s;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
 .card:hover{
@@ -83,10 +79,11 @@ transform:translateY(-8px);
 }
 
 .card h3{
-margin-bottom:10px;
 color:#00a86b;
+margin-bottom:10px;
 }
 
+/* STATS */
 .stats{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -95,21 +92,18 @@ gap:20px;
 
 .stat{
 background:linear-gradient(135deg,#36d1dc,#5b86e5);
-padding:30px;
-border-radius:15px;
 color:white;
+padding:25px;
+border-radius:15px;
 text-align:center;
 }
 
-.stat h2{
-font-size:2.3rem;
-}
-
+/* TOOLS */
 .tool-box{
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 max-width:600px;
 margin:auto;
 }
@@ -118,12 +112,12 @@ input,textarea{
 width:100%;
 padding:12px;
 margin:10px 0;
-border:1px solid #ccc;
 border-radius:8px;
+border:1px solid #ccc;
 }
 
 button{
-padding:12px 25px;
+padding:12px 20px;
 background:#00a86b;
 color:white;
 border:none;
@@ -135,20 +129,38 @@ button:hover{
 background:#008e5b;
 }
 
+/* TIPS */
 .tips{
 background:#e8fff4;
-padding:15px;
+padding:12px;
 border-left:6px solid #00a86b;
 margin:10px 0;
-border-radius:10px;
+border-radius:8px;
 }
 
-.quiz-option{
-display:block;
-background:#f1f1f1;
-padding:10px;
-margin:8px 0;
-border-radius:8px;
+/* LOGIN */
+.modal{
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:white;
+padding:25px;
+border-radius:15px;
+width:300px;
+text-align:center;
+}
+
+/* QR */
+.qr{
+text-align:center;
+margin-top:20px;
 }
 
 footer{
@@ -156,277 +168,128 @@ background:#0057c2;
 color:white;
 text-align:center;
 padding:20px;
-margin-top:30px;
-}
-
-/* Login Modal */
-
-.modal{
-display:flex;
-position:fixed;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.6);
-justify-content:center;
-align-items:center;
-z-index:1000;
-}
-
-.modal-content{
-background:white;
-padding:30px;
-width:350px;
-border-radius:15px;
-text-align:center;
-}
-
-.hero{
-text-align:center;
-font-size:18px;
-line-height:1.8;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Login -->
-
+<!-- LOGIN -->
 <div class="modal" id="loginModal">
 <div class="modal-content">
-<h2>🏥 Healthcare Portal Login</h2>
-<br>
-<input type="text" id="username" placeholder="Enter Name">
-<input type="password" id="password" placeholder="Password">
-<button onclick="login()">Login</button>
+<h2>Login</h2>
+<input type="text" placeholder="Name">
+<input type="password" placeholder="Password">
+<button onclick="document.getElementById('loginModal').style.display='none'">Enter</button>
 </div>
 </div>
 
 <header>
-<h1>🏥 Healthcare Awareness Programmes</h1>
-<p>Educating Communities for a Healthier Future</p>
+<h1>Healthcare Awareness Programmes</h1>
+<p>Healthy Life, Healthy Future</p>
 </header>
 
 <nav>
-<a href="#home">Home</a>
 <a href="#programs">Programs</a>
 <a href="#impact">Impact</a>
 <a href="#bmi">BMI</a>
 <a href="#quiz">Quiz</a>
 <a href="#tips">Tips</a>
 <a href="#contact">Feedback</a>
+<a href="#qr">QR Code</a>
 </nav>
 
-<section id="home">
-<h2 class="section-title">About the Project</h2>
-
-<div class="hero">
-Healthcare awareness programmes help people understand
-the importance of hygiene, vaccination, nutrition,
-mental health and disease prevention. These programmes
-improve public health and create healthier communities.
-</div>
-</section>
-
+<!-- PROGRAMS -->
 <section id="programs">
 <h2 class="section-title">Awareness Programmes</h2>
-
 <div class="cards">
-
-<div class="card">
-<h3>💉 Vaccination Drives</h3>
-<p>Encourage immunization and disease prevention.</p>
-</div>
-
-<div class="card">
-<h3>🩺 Health Check-up Camps</h3>
-<p>Provide free screenings and early diagnosis.</p>
-</div>
-
-<div class="card">
-<h3>🥗 Nutrition Awareness</h3>
-<p>Promote healthy food habits and balanced diets.</p>
-</div>
-
-<div class="card">
-<h3>🏃 Fitness Campaigns</h3>
-<p>Promote physical activity and wellness.</p>
-</div>
-
+<div class="card"><h3>Vaccination</h3><p>Protects from diseases.</p></div>
+<div class="card"><h3>Health Camps</h3><p>Free checkups for people.</p></div>
+<div class="card"><h3>Nutrition</h3><p>Healthy food habits.</p></div>
+<div class="card"><h3>Fitness</h3><p>Daily exercise awareness.</p></div>
 </div>
 </section>
 
+<!-- IMPACT -->
 <section id="impact">
-<h2 class="section-title">Programme Impact</h2>
-
+<h2 class="section-title">Impact</h2>
 <div class="stats">
-
-<div class="stat">
-<h2>80%</h2>
-<p>Health Awareness</p>
-</div>
-
-<div class="stat">
-<h2>70%</h2>
-<p>Vaccination Rate</p>
-</div>
-
-<div class="stat">
-<h2>65%</h2>
-<p>Improved Hygiene</p>
-</div>
-
-<div class="stat">
-<h2>50%</h2>
-<p>Disease Reduction</p>
-</div>
-
+<div class="stat"><h2>80%</h2><p>Awareness</p></div>
+<div class="stat"><h2>70%</h2><p>Vaccination</p></div>
+<div class="stat"><h2>65%</h2><p>Hygiene</p></div>
+<div class="stat"><h2>50%</h2><p>Disease Reduction</p></div>
 </div>
 </section>
 
+<!-- BMI -->
 <section id="bmi">
 <h2 class="section-title">BMI Calculator</h2>
-
 <div class="tool-box">
-
-<input type="number" id="weight" placeholder="Weight (kg)">
-<input type="number" id="height" placeholder="Height (cm)">
-
-<button onclick="calculateBMI()">Calculate BMI</button>
-
-<h3 id="bmiResult" style="margin-top:15px;"></h3>
-
+<input id="w" type="number" placeholder="Weight (kg)">
+<input id="h" type="number" placeholder="Height (cm)">
+<button onclick="calcBMI()">Calculate</button>
+<h3 id="bmiResult"></h3>
 </div>
 </section>
 
+<!-- QUIZ -->
 <section id="quiz">
-<h2 class="section-title">Health Awareness Quiz</h2>
-
+<h2 class="section-title">Health Quiz</h2>
 <div class="tool-box">
-
-<p><b>1. How many glasses of water should a person drink daily?</b></p>
-
-<label class="quiz-option">
-<input type="radio" name="q1" value="8"> 8 Glasses
-</label>
-
-<label class="quiz-option">
-<input type="radio" name="q1" value="4"> 4 Glasses
-</label>
-
-<label class="quiz-option">
-<input type="radio" name="q1" value="2"> 2 Glasses
-</label>
-
-<br>
-
-<button onclick="checkQuiz()">Submit Quiz</button>
-
-<h3 id="quizResult" style="margin-top:15px;"></h3>
-
+<p>How many glasses of water daily?</p>
+<button onclick="checkQuiz('8')">8</button>
+<button onclick="checkQuiz('4')">4</button>
+<button onclick="checkQuiz('2')">2</button>
+<h3 id="quizResult"></h3>
 </div>
 </section>
 
+<!-- TIPS -->
 <section id="tips">
-<h2 class="section-title">Healthy Living Tips</h2>
-
-<div class="tips">✅ Drink at least 8 glasses of water daily.</div>
-<div class="tips">✅ Exercise 30 minutes every day.</div>
-<div class="tips">✅ Eat fruits and vegetables regularly.</div>
-<div class="tips">✅ Get vaccinated on time.</div>
-<div class="tips">✅ Maintain good hygiene practices.</div>
-
+<h2 class="section-title">Health Tips</h2>
+<div class="tips">Drink water daily</div>
+<div class="tips">Exercise regularly</div>
+<div class="tips">Eat fruits & vegetables</div>
+<div class="tips">Sleep 7–8 hours</div>
 </section>
 
+<!-- FEEDBACK -->
 <section id="contact">
-<h2 class="section-title">Feedback Form</h2>
-
+<h2 class="section-title">Feedback</h2>
 <div class="tool-box">
+<input placeholder="Name">
+<textarea placeholder="Feedback"></textarea>
+<button onclick="alert('Thank you for feedback!')">Submit</button>
+</div>
+</section>
 
-<form onsubmit="feedback(event)">
-<input type="text" required placeholder="Your Name">
-<input type="email" required placeholder="Your Email">
-<textarea rows="5" placeholder="Your Feedback"></textarea>
-
-<button type="submit">Submit Feedback</button>
-</form>
-
-<h3 id="feedbackMsg"></h3>
-
+<!-- QR CODE -->
+<section id="qr">
+<h2 class="section-title">Scan QR Code</h2>
+<div class="qr">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://maligaakshaya.github.io/healthcare-awareness/" />
+<p>Scan to open website</p>
 </div>
 </section>
 
 <footer>
-<h3>Healthcare Awareness Programmes and Their Impact</h3>
-<p>Mini Project | HTML • CSS • JavaScript</p>
+<p>Healthcare Awareness Mini Project</p>
 </footer>
 
 <script>
-
-function login(){
-let user=document.getElementById("username").value;
-let pass=document.getElementById("password").value;
-
-if(user!="" && pass!=""){
-document.getElementById("loginModal").style.display="none";
-}
-else{
-alert("Please enter username and password");
-}
+function calcBMI(){
+let w=document.getElementById("w").value;
+let h=document.getElementById("h").value/100;
+let bmi=(w/(h*h)).toFixed(2);
+document.getElementById("bmiResult").innerText="BMI: "+bmi;
 }
 
-function calculateBMI(){
-
-let weight=parseFloat(document.getElementById("weight").value);
-let height=parseFloat(document.getElementById("height").value)/100;
-
-if(weight && height){
-
-let bmi=(weight/(height*height)).toFixed(2);
-
-let status="";
-
-if(bmi<18.5)
-status="Underweight";
-
-else if(bmi<25)
-status="Normal";
-
-else if(bmi<30)
-status="Overweight";
-
-else
-status="Obese";
-
-document.getElementById("bmiResult").innerHTML=
-"Your BMI is "+bmi+" ("+status+")";
+function checkQuiz(ans){
+if(ans=="8"){
+document.getElementById("quizResult").innerText="Correct!";
+}else{
+document.getElementById("quizResult").innerText="Wrong Answer";
 }
-}
-
-function checkQuiz(){
-
-let answer=document.querySelector('input[name="q1"]:checked');
-
-if(!answer){
-alert("Select an answer");
-return;
-}
-
-if(answer.value=="8"){
-document.getElementById("quizResult").innerHTML=
-"🎉 Correct! Well Done.";
-}
-else{
-document.getElementById("quizResult").innerHTML=
-"❌ Incorrect. Correct Answer: 8 Glasses.";
-}
-}
-
-function feedback(e){
-e.preventDefault();
-
-document.getElementById("feedbackMsg").innerHTML=
-"✅ Thank You! Feedback Submitted Successfully.";
 }
 </script>
 
