@@ -1,33 +1,188 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Healthcare Awareness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
-body{background:linear-gradient(135deg,#ff416c,#7c4dff,#00c6ff);background-size:300% 300%;animation:bg 12s infinite;color:#fff;scroll-behavior:smooth}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',Segoe UI,sans-serif}
+body{background:linear-gradient(135deg,#ff416c,#7c4dff,#00c6ff);background-size:300% 300%;animation:bg 12s infinite;color:#fff;scroll-behavior:smooth;line-height:1.6}
 @keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
-nav{position:sticky;top:0;display:flex;justify-content:center;gap:25px;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);padding:15px}
-nav a{color:#fff;text-decoration:none;font-weight:bold}
-header{padding:90px 20px;text-align:center}
-h1{font-size:3rem}.hero{max-width:800px;margin:auto}
-section{padding:50px 8%}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:rgba(255,255,255,.15);backdrop-filter:blur(15px);padding:20px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.3);transition:.4s}
-.card:hover{transform:translateY(-10px) scale(1.04)}
+
+nav{position:sticky;top:0;z-index:50;display:flex;justify-content:center;gap:14px;background:rgba(0,0,0,.35);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:16px;box-shadow:0 4px 20px rgba(0,0,0,.25);border-bottom:1px solid rgba(255,255,255,.12);flex-wrap:wrap}
+nav button{background:transparent;color:#fff;border:none;font-weight:600;font-size:.95rem;letter-spacing:.03em;padding:8px 14px;border-radius:8px;cursor:pointer;opacity:.9;transition:.25s;box-shadow:none}
+nav button:hover{opacity:1;background:rgba(255,255,255,.15);transform:none}
+
+header{padding:120px 20px 100px;text-align:center;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 65%);pointer-events:none}
+h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.02em;text-shadow:0 6px 30px rgba(0,0,0,.25);position:relative}
+.hero{max-width:800px;margin:auto;position:relative}
+.hero p{margin-top:14px;font-size:1.15rem;font-weight:500;opacity:.9;letter-spacing:.02em}
+
+section{padding:70px 8%}
+section h2{font-size:2rem;font-weight:700;margin-bottom:28px;text-align:center;letter-spacing:-.01em}
+section h2::after{content:'';display:block;width:56px;height:4px;background:#ffd54f;margin:12px auto 0;border-radius:4px}
+section p{text-align:center;max-width:640px;margin:-8px auto 34px;opacity:.9;font-size:1.02rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+
+.card{background:rgba(255,255,255,.14);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:28px 22px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.18);transition:.4s cubic-bezier(.2,.8,.3,1);text-align:center;font-weight:600;font-size:1.05rem}
+.card:hover{transform:translateY(-10px) scale(1.04);background:rgba(255,255,255,.22);box-shadow:0 20px 40px rgba(0,0,0,.35)}
+
+.counter{font-size:2.6rem;font-weight:800;color:#ffd54f;text-shadow:0 4px 18px rgba(0,0,0,.25);margin-bottom:6px}
+
+#tools{max-width:560px;margin:0 auto;text-align:center}
+#tools h2{margin-top:10px}
+#tools>h2:not(:first-child){margin-top:50px}
+
+#quiz{max-width:560px;margin:0 auto;text-align:center}
+.quiz-box{background:rgba(255,255,255,.14);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:20px;padding:26px;border:1px solid rgba(255,255,255,.18);box-shadow:0 10px 25px rgba(0,0,0,.3)}
+.quiz-q{font-size:1.15rem;font-weight:700;margin-bottom:18px}
+.quiz-opts{display:flex;flex-direction:column;gap:10px}
+.quiz-opt{background:rgba(255,255,255,.9);color:#333;border:none;padding:12px 16px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;box-shadow:none;margin:0;text-align:left}
+.quiz-opt:hover{background:#fff;transform:none}
+.quiz-opt.correct{background:#8bd17c;color:#193b12}
+.quiz-opt.wrong{background:#f28b82;color:#4a0f0a}
+.quiz-score{font-size:2rem;font-weight:800;color:#ffd54f;text-shadow:0 4px 18px rgba(0,0,0,.25)}
+
 input,button{padding:10px;border:none;border-radius:10px;margin:5px}
-button{background:#ffd54f;cursor:pointer}
-footer{text-align:center;padding:25px;background:rgba(0,0,0,.4)}
-.counter{font-size:2rem;font-weight:bold}
+input{padding:13px 16px;border-radius:10px;margin:6px;width:calc(50% - 12px);min-width:140px;font-family:'Poppins',sans-serif;font-size:.95rem;background:rgba(255,255,255,.92);color:#333;box-shadow:inset 0 1px 4px rgba(0,0,0,.15);transition:.25s}
+input:focus{outline:none;box-shadow:0 0 0 3px #ffd54f}
+input::placeholder{color:#888}
+
+#tools button,#quiz-restart{background:linear-gradient(135deg,#ffd54f,#ffb300);color:#3a2a00;cursor:pointer;font-weight:700;font-size:.95rem;letter-spacing:.02em;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:.25s;padding:13px 26px;border:none;border-radius:10px;margin:10px 5px}
+#tools button:hover,#quiz-restart:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.3)}
+#tools button:active,#quiz-restart:active{transform:translateY(0) scale(.97)}
+
+#r,#t{margin-top:16px;font-size:1.3rem;font-weight:700;min-height:1.6rem;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+
+footer{text-align:center;padding:30px;background:rgba(0,0,0,.4);font-size:.9rem;letter-spacing:.03em;opacity:.85;border-top:1px solid rgba(255,255,255,.12)}
+
+@media(max-width:600px){
+  nav{gap:8px;padding:14px}
+  header{padding:90px 16px 70px}
+  input{width:100%}
+}
 </style></head><body>
-<nav><a href=#about>About</a><a href=#programs>Programs</a><a href=#tools>Tools</a></nav>
-<header><div class=hero><h1>Health Care Awareness Programmes and Their Impact</h1><p>Community Service Project</p></div></header>
-<section id=about><h2>About</h2><p>Promoting hygiene, vaccination, nutrition and preventive healthcare awareness.</p>
-<div class=grid><div class=card><div class=counter id=c1>0</div>People Reached</div><div class=card><div class=counter id=c2>0</div>Health Camps</div><div class=card><div class=counter id=c3>0</div>Awareness Drives</div></div></section>
-<section id=programs><h2>Government Programmes</h2><div class=grid>
-<div class=card>Ayushman Bharat</div><div class=card>National Health Mission</div><div class=card>Mission Indradhanush</div><div class=card>Poshan Abhiyaan</div></div></section>
-<section id=tools><h2>BMI Calculator</h2><input id=h placeholder="Height cm"><input id=w placeholder="Weight kg"><button onclick="bmi()">Calculate</button><p id=r></p>
-<h2>Health Tip</h2><button onclick="tip()">Generate Tip</button><p id=t></p></section>
+
+<nav>
+  <button type="button" class="nav-btn" data-target="about">About</button>
+  <button type="button" class="nav-btn" data-target="programs">Programs</button>
+  <button type="button" class="nav-btn" data-target="tools">Tools</button>
+  <button type="button" class="nav-btn" data-target="quiz">Quiz</button>
+</nav>
+
+<header><div class="hero"><h1>Health Care Awareness Programmes and Their Impact</h1><p>Community Service Project</p></div></header>
+
+<section id="about"><h2>About</h2><p>Promoting hygiene, vaccination, nutrition and preventive healthcare awareness.</p>
+<div class="grid"><div class="card"><div class="counter" id="c1">0</div>People Reached</div><div class="card"><div class="counter" id="c2">0</div>Health Camps</div><div class="card"><div class="counter" id="c3">0</div>Awareness Drives</div></div></section>
+
+<section id="programs"><h2>Government Programmes</h2><div class="grid">
+<div class="card">Ayushman Bharat</div><div class="card">National Health Mission</div><div class="card">Mission Indradhanush</div><div class="card">Poshan Abhiyaan</div></div></section>
+
+<section id="tools"><h2>BMI Calculator</h2><input id="h" placeholder="Height cm"><input id="w" placeholder="Weight kg"><button type="button" id="bmiBtn">Calculate</button><p id="r"></p>
+<h2>Health Tip</h2><button type="button" id="tipBtn">Generate Tip</button><p id="t"></p></section>
+
+<section id="quiz"><h2>Health Quiz</h2>
+  <div class="quiz-box" id="quizBox"></div>
+</section>
+
 <footer>© 2026 CSP Project</footer>
+
 <script>
-function bmi(){let h=document.getElementById('h').value/100,w=document.getElementById('w').value;if(!h||!w)return;document.getElementById('r').innerText='BMI: '+(w/(h*h)).toFixed(1);}
-let tips=['Drink water','Sleep 8 hours','Exercise daily','Eat fruits'];function tip(){t.innerText=tips[Math.floor(Math.random()*tips.length)]}
-function anim(id,max){let n=0,x=setInterval(()=>{n++;document.getElementById(id).innerText=n;if(n>=max)clearInterval(x)},20)}
-anim('c1',500);anim('c2',25);anim('c3',120);
-</script></body></html>
+/* ---- nav: buttons only, no href, cannot navigate anywhere ---- */
+document.querySelectorAll('.nav-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var target = document.getElementById(btn.getAttribute('data-target'));
+    if(target){
+      if(typeof target.scrollIntoView === 'function'){
+        target.scrollIntoView({behavior:'smooth'});
+      } else {
+        window.scrollTo(0, target.offsetTop);
+      }
+    }
+  });
+});
+
+/* ---- BMI calculator ---- */
+function bmi(){
+  var h = document.getElementById('h').value / 100;
+  var w = document.getElementById('w').value;
+  if(!h || !w) return;
+  document.getElementById('r').textContent = 'BMI: ' + (w / (h * h)).toFixed(1);
+}
+document.getElementById('bmiBtn').addEventListener('click', bmi);
+
+/* ---- Health tip ---- */
+var tips = ['Drink water', 'Sleep 8 hours', 'Exercise daily', 'Eat fruits'];
+function tip(){
+  document.getElementById('t').textContent = tips[Math.floor(Math.random() * tips.length)];
+}
+document.getElementById('tipBtn').addEventListener('click', tip);
+
+/* ---- Counters ---- */
+function anim(id, max){
+  var n = 0;
+  var x = setInterval(function(){
+    n++;
+    document.getElementById(id).textContent = n;
+    if(n >= max) clearInterval(x);
+  }, 20);
+}
+anim('c1', 500);
+anim('c2', 25);
+anim('c3', 120);
+
+/* ---- Quiz ---- */
+var quizData = [
+  { q: 'Vaccines help prevent infectious diseases.', opts: ['True', 'False'], a: 0 },
+  { q: 'Washing hands with soap reduces the spread of germs.', opts: ['True', 'False'], a: 0 },
+  { q: 'Drinking enough water has no effect on health.', opts: ['True', 'False'], a: 1 },
+  { q: 'Regular BMI checks help track a healthy body weight.', opts: ['True', 'False'], a: 0 },
+  { q: 'Skipping meals is a recommended health tip.', opts: ['True', 'False'], a: 1 }
+];
+var qIndex = 0;
+var qScore = 0;
+var quizBox = document.getElementById('quizBox');
+
+function renderQuiz(){
+  if(qIndex >= quizData.length){
+    quizBox.innerHTML =
+      '<div class="quiz-q">Quiz complete!</div>' +
+      '<div class="quiz-score">' + qScore + ' / ' + quizData.length + '</div>' +
+      '<button type="button" id="quiz-restart">Play again</button>';
+    document.getElementById('quiz-restart').addEventListener('click', function(){
+      qIndex = 0;
+      qScore = 0;
+      renderQuiz();
+    });
+    return;
+  }
+  var item = quizData[qIndex];
+  var optsHtml = '';
+  for(var i = 0; i < item.opts.length; i++){
+    optsHtml += '<button type="button" class="quiz-opt" data-i="' + i + '">' + item.opts[i] + '</button>';
+  }
+  quizBox.innerHTML =
+    '<div class="quiz-q">Q' + (qIndex + 1) + ' of ' + quizData.length + ': ' + item.q + '</div>' +
+    '<div class="quiz-opts">' + optsHtml + '</div>';
+
+  var optButtons = quizBox.querySelectorAll('.quiz-opt');
+  optButtons.forEach(function(optBtn){
+    optBtn.addEventListener('click', function(){
+      var chosen = parseInt(optBtn.getAttribute('data-i'), 10);
+      optButtons.forEach(function(b){ b.disabled = true; });
+      if(chosen === item.a){
+        optBtn.classList.add('correct');
+        qScore++;
+      } else {
+        optBtn.classList.add('wrong');
+        optButtons[item.a].classList.add('correct');
+      }
+      setTimeout(function(){
+        qIndex++;
+        renderQuiz();
+      }, 900);
+    });
+  });
+}
+renderQuiz();
+</script>
+</body></html>
