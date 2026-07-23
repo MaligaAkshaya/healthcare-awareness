@@ -1,297 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Healthcare Awareness Programmes</title>
-
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Healthcare Awareness</title>
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
-body{
-background:#f4fbff;
-color:#333;
-}
-
-/* HEADER */
-header{
-background:linear-gradient(135deg,#00c6ff,#0072ff);
-color:white;
-text-align:center;
-padding:60px 20px;
-}
-
-header h1{font-size:2.8rem;}
-
-/* NAV */
-nav{
-background:#0057c2;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-nav a{
-color:white;
-padding:15px 20px;
-text-decoration:none;
-transition:0.3s;
-}
-
-nav a:hover{
-background:#00c6ff;
-}
-
-/* SECTION */
-section{
-padding:60px 10%;
-}
-
-.section-title{
-text-align:center;
-font-size:2rem;
-color:#0072ff;
-margin-bottom:25px;
-}
-
-/* CARDS */
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card h3{
-color:#00a86b;
-margin-bottom:10px;
-}
-
-/* STATS */
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.stat{
-background:linear-gradient(135deg,#36d1dc,#5b86e5);
-color:white;
-padding:25px;
-border-radius:15px;
-text-align:center;
-}
-
-/* TOOLS */
-.tool-box{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-max-width:600px;
-margin:auto;
-}
-
-input,textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ccc;
-}
-
-button{
-padding:12px 20px;
-background:#00a86b;
-color:white;
-border:none;
-border-radius:8px;
-cursor:pointer;
-}
-
-button:hover{
-background:#008e5b;
-}
-
-/* TIPS */
-.tips{
-background:#e8fff4;
-padding:12px;
-border-left:6px solid #00a86b;
-margin:10px 0;
-border-radius:8px;
-}
-
-/* LOGIN */
-.modal{
-position:fixed;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.modal-content{
-background:white;
-padding:25px;
-border-radius:15px;
-width:300px;
-text-align:center;
-}
-
-/* QR */
-.qr{
-text-align:center;
-margin-top:20px;
-}
-
-footer{
-background:#0057c2;
-color:white;
-text-align:center;
-padding:20px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- LOGIN -->
-<div class="modal" id="loginModal">
-<div class="modal-content">
-<h2>Login</h2>
-<input type="text" placeholder="Name">
-<input type="password" placeholder="Password">
-<button onclick="document.getElementById('loginModal').style.display='none'">Enter</button>
-</div>
-</div>
-
-<header>
-<h1>Healthcare Awareness Programmes</h1>
-<p>Healthy Life, Healthy Future</p>
-</header>
-
-<nav>
-<a href="#programs">Programs</a>
-<a href="#impact">Impact</a>
-<a href="#bmi">BMI</a>
-<a href="#quiz">Quiz</a>
-<a href="#tips">Tips</a>
-<a href="#contact">Feedback</a>
-<a href="#qr">QR Code</a>
-</nav>
-
-<!-- PROGRAMS -->
-<section id="programs">
-<h2 class="section-title">Awareness Programmes</h2>
-<div class="cards">
-<div class="card"><h3>Vaccination</h3><p>Protects from diseases.</p></div>
-<div class="card"><h3>Health Camps</h3><p>Free checkups for people.</p></div>
-<div class="card"><h3>Nutrition</h3><p>Healthy food habits.</p></div>
-<div class="card"><h3>Fitness</h3><p>Daily exercise awareness.</p></div>
-</div>
-</section>
-
-<!-- IMPACT -->
-<section id="impact">
-<h2 class="section-title">Impact</h2>
-<div class="stats">
-<div class="stat"><h2>80%</h2><p>Awareness</p></div>
-<div class="stat"><h2>70%</h2><p>Vaccination</p></div>
-<div class="stat"><h2>65%</h2><p>Hygiene</p></div>
-<div class="stat"><h2>50%</h2><p>Disease Reduction</p></div>
-</div>
-</section>
-
-<!-- BMI -->
-<section id="bmi">
-<h2 class="section-title">BMI Calculator</h2>
-<div class="tool-box">
-<input id="w" type="number" placeholder="Weight (kg)">
-<input id="h" type="number" placeholder="Height (cm)">
-<button onclick="calcBMI()">Calculate</button>
-<h3 id="bmiResult"></h3>
-</div>
-</section>
-
-<!-- QUIZ -->
-<section id="quiz">
-<h2 class="section-title">Health Quiz</h2>
-<div class="tool-box">
-<p>How many glasses of water daily?</p>
-<button onclick="checkQuiz('8')">8</button>
-<button onclick="checkQuiz('4')">4</button>
-<button onclick="checkQuiz('2')">2</button>
-<h3 id="quizResult"></h3>
-</div>
-</section>
-
-<!-- TIPS -->
-<section id="tips">
-<h2 class="section-title">Health Tips</h2>
-<div class="tips">Drink water daily</div>
-<div class="tips">Exercise regularly</div>
-<div class="tips">Eat fruits & vegetables</div>
-<div class="tips">Sleep 7–8 hours</div>
-</section>
-
-<!-- FEEDBACK -->
-<section id="contact">
-<h2 class="section-title">Feedback</h2>
-<div class="tool-box">
-<input placeholder="Name">
-<textarea placeholder="Feedback"></textarea>
-<button onclick="alert('Thank you for feedback!')">Submit</button>
-</div>
-</section>
-
-<!-- QR CODE -->
-<section id="qr">
-<h2 class="section-title">Scan QR Code</h2>
-<div class="qr">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://maligaakshaya.github.io/healthcare-awareness/" />
-<p>Scan to open website</p>
-</div>
-</section>
-
-<footer>
-<p>Healthcare Awareness Mini Project</p>
-</footer>
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:linear-gradient(135deg,#ff416c,#7c4dff,#00c6ff);background-size:300% 300%;animation:bg 12s infinite;color:#fff;scroll-behavior:smooth}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+nav{position:sticky;top:0;display:flex;justify-content:center;gap:25px;background:rgba(0,0,0,.4);backdrop-filter:blur(12px);padding:15px}
+nav a{color:#fff;text-decoration:none;font-weight:bold}
+header{padding:90px 20px;text-align:center}
+h1{font-size:3rem}.hero{max-width:800px;margin:auto}
+section{padding:50px 8%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:rgba(255,255,255,.15);backdrop-filter:blur(15px);padding:20px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.3);transition:.4s}
+.card:hover{transform:translateY(-10px) scale(1.04)}
+input,button{padding:10px;border:none;border-radius:10px;margin:5px}
+button{background:#ffd54f;cursor:pointer}
+footer{text-align:center;padding:25px;background:rgba(0,0,0,.4)}
+.counter{font-size:2rem;font-weight:bold}
+</style></head><body>
+<nav><a href=#about>About</a><a href=#programs>Programs</a><a href=#tools>Tools</a></nav>
+<header><div class=hero><h1>Health Care Awareness Programmes and Their Impact</h1><p>Community Service Project</p></div></header>
+<section id=about><h2>About</h2><p>Promoting hygiene, vaccination, nutrition and preventive healthcare awareness.</p>
+<div class=grid><div class=card><div class=counter id=c1>0</div>People Reached</div><div class=card><div class=counter id=c2>0</div>Health Camps</div><div class=card><div class=counter id=c3>0</div>Awareness Drives</div></div></section>
+<section id=programs><h2>Government Programmes</h2><div class=grid>
+<div class=card>Ayushman Bharat</div><div class=card>National Health Mission</div><div class=card>Mission Indradhanush</div><div class=card>Poshan Abhiyaan</div></div></section>
+<section id=tools><h2>BMI Calculator</h2><input id=h placeholder="Height cm"><input id=w placeholder="Weight kg"><button onclick="bmi()">Calculate</button><p id=r></p>
+<h2>Health Tip</h2><button onclick="tip()">Generate Tip</button><p id=t></p></section>
+<footer>© 2026 CSP Project</footer>
 <script>
-function calcBMI(){
-let w=document.getElementById("w").value;
-let h=document.getElementById("h").value/100;
-let bmi=(w/(h*h)).toFixed(2);
-document.getElementById("bmiResult").innerText="BMI: "+bmi;
-}
-
-function checkQuiz(ans){
-if(ans=="8"){
-document.getElementById("quizResult").innerText="Correct!";
-}else{
-document.getElementById("quizResult").innerText="Wrong Answer";
-}
-}
-</script>
-
-</body>
-</html>
+function bmi(){let h=document.getElementById('h').value/100,w=document.getElementById('w').value;if(!h||!w)return;document.getElementById('r').innerText='BMI: '+(w/(h*h)).toFixed(1);}
+let tips=['Drink water','Sleep 8 hours','Exercise daily','Eat fruits'];function tip(){t.innerText=tips[Math.floor(Math.random()*tips.length)]}
+function anim(id,max){let n=0,x=setInterval(()=>{n++;document.getElementById(id).innerText=n;if(n>=max)clearInterval(x)},20)}
+anim('c1',500);anim('c2',25);anim('c3',120);
+</script></body></html>
